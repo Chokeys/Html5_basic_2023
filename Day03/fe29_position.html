@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CSS 위치 속성</title>
+    <style>
+        /* #out{ } 쓸지는 내맘 */
+        body > div{
+            width: 420px;
+            height: 150px;
+             border: 2px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+        .box{
+            width: 100px; height: 100px;
+            position: absolute;
+        }
+        .box:nth-child(1){
+            background-color: red;
+            left: 10px; top: 10px;
+            z-index: 100;
+        }
+        .box:nth-child(2){
+            background-color:green;
+            left: 50px; top: 50px;
+            z-index: 10;
+        }
+        .box:nth-child(3){
+            background-color: blue;
+            left: 90px; top: 90px;
+        z-index: 1;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>lorem ipsum dolor sit</h1>
+    <div id="out">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
