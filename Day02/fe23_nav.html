@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>구조 선택자(메뉴)</title>
+    <style>
+        ul{
+            overflow: hidden;
+        }
+        li{
+            list-style: none; /* 점 삭제 */
+            float: left;
+            padding: 10px;
+        }
+        li:nth-child(2n+1){ /*홀수메뉴*/
+            background-color: dodgerblue;
+        }
+        li:nth-child(2n){ /*짝수메뉴*/
+            background-color: darkseagreen;
+        }
+        li:first-child{ 
+           border-radius: 10px 0 0 10px;
+           margin-left: 60PX;
+           
+        }
+        li:last-child{ 
+           border-radius: 0px 10px 10px 0;
+        }
+        li:hover{
+            color: red;
+        }
+        #first{
+            background-color: rgb(225, 0, 0); float: left;
+            width: 100px; height: 100px;
+            border-left: 10px;
+        }
+        #second{
+            background-color: #ff0000; float: left;
+            width: 100px; height: 100px;
+        }
+        #third{
+            background-color:rgba(255,0, 0, 0.7); float: left;
+            width: 100px; height: 100px;
+        }
+        #four{
+            background-color:rgba(255,255,255,); float: left;
+            width: 100px; height: 100px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Product</li>
+        <li>Service</li>
+        <li>Portfolio</li>
+        <li>Board</li>
+        <li>Contact</li>
+    </ul>    
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third" ></div>
+
+    <div id="four" ></div>
+
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+
+</body>
+</html>
