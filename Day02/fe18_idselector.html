@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>   
+    <title>ID/CLASS 선택자</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+        }
+
+        #header{
+            width: 1024px; margin:0px auto;
+            background-color: red;
+            padding: 5px; margin: 30px;
+        }
+        #wrap{
+            width: 1024px; margin: 0px auto;
+            overflow: hidden;
+        }
+
+        #aside{
+            width: 200px; float: right;
+            background-color: blue;
+            padding: 5px;
+        }
+        #content{
+            width: 790px; float: left;
+            background-color: green;
+            padding: 5px; margin: 10px;
+        }
+    
+        .summer{
+            font-size: 20px;
+            color:brown ;;
+        }
+        .title{
+            background-color: aqua;
+            border: 3px solid #808080;
+            border-radius: 10px;
+        }
+        .item{
+            font-size: 50px;
+            font-size: unset;
+        }
+        .bound{
+            /* border-width: 3px;
+            border-style: solid;
+            border-color: gray; */
+            border: 3px solid #808080;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>#header 영역</h1>
+    </div>   
+    <div id="wrap">
+        <div id="aside">
+            <h2>#aside영역</h2>
+        </div>
+        <div id="content">
+            <h2>#content 영역</h2>
+        </div>
+    </div>
+    <div  >
+        <ul>
+            <li >딸기</li>
+            <li class="summer" >애플망고</li>
+            <li>바나나</li>
+            <li class="summer" >수박</li>
+        </ul>
+    </div>
+    <span id="span1">1st span</span>
+    <span id="span2"><h2 class="title">2nd span</h2></span>
+    <span id="span3">3st span</span>
+
+    <h1 class="item bound"> 동해물과 백두산이!!!</h1>
+
+
+</body>
+</html>
