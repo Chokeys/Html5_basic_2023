@@ -23,3 +23,7 @@ java 개발자 과정 프론트앤드 리포지토리
     - CSS 3 고급   
     - HTML 레이아웃
     - 반응형 웹
+
+3일차 레이아웃
+
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/day3.png" width="300">
