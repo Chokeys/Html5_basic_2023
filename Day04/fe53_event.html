@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        // 이벤트 매개변수 사용. event.type 종류확인
+        window.onload = function(event){
+            alert(event.type); // load
+            var btnSave =document.getElementById('btnSave');
+
+            btnSave.onclick = function(e){
+                alert(e.type); // click
+            }
+        };
+
+        // javascript의 특징은 쉽다.
+        // 1. 변수선언이 var 하나로 다됨
+        // 2. java와 조건문, 반목문 동일
+        // DOM으로 HTML 태그를 전부 컨트롤
+        // function () 익명함수 형태의 함수선언이 일반적
+        
+    </script>
+</head>
+<body>
+    <button id="btnSave">클릭</button> 
+    
+</body>
+</html>

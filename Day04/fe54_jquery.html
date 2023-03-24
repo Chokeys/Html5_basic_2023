@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <!-- <script src = 'script/jquery-3.6.4.min.js'></script> -->
+   <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+   <script>
+    /* javascript 전통 이벤트 */
+    // window.onload = function(){
+    //     alert('Hello,javascript');
+    // }
+
+    /* jQuery 방식 이벤트 */
+    $(document).ready(function(){
+        // alert('Hello, jQuery');
+        $('h1').css('background-color','black'); //for문으로 일일이 안돌려도 쉽게 출력할 수 있음
+        $('h1').css('color','white'); // 근데 대문자로 하면 안됨 c가 대문자 C면 안됨.
+        // fe50_dom.html 소스와 비교해 보면 훨신 소스간결, 쓰기도 편함
+   
+        alert($('meta').attr('charset')); // 어디든지 접근 가능하다.
+   
+   
+   
+    });
+   </script>
+</head>
+<body>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    
+</body>
+</html>

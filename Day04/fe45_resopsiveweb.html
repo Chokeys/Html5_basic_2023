@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>반응형웹 뷰포트</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        *{  margin: 0px; padding: 0px;}
+
+        #menu{
+            width: 260px;
+            float: left;
+        }
+        #section{
+            width: 700px;
+            float: left;
+        }
+        li{
+            list-style: none;
+        }
+
+        /* 스마트폰 */
+        @media screen and (max-width : 450px) and (orientation : portrait) {
+            body{
+                background-color: aqua;
+                width: auto;
+            }
+            #menu{width: auto;float: none;}
+            #section{width: auto;float: none;}
+        }
+        /* 태블릿 */
+        @media screen and (min-width : 450px) and (max-width:960px) and (orientation : portrait) {
+            body{
+                background-color: burlywood;
+                width: auto;
+            }
+            #menu{width: auto;float: none;}
+            #section{width: auto;float: none;}
+        }
+        
+        /* 데스크탑 */
+        @media screen and (min-width : 960px) and (orientation : portrait) {
+            body{
+                background-color: cadetblue;
+                width: 960px;
+                margin:  0 auto;
+                overflow: hidden;
+            }
+        }
+
+        @media screen and (orientation : landscape){
+            body{
+                background-color: gray;
+            }
+        }
+
+        @media print{
+            h1{
+                color: blue;
+                font-size: 60px ;
+            }
+            body{
+                background-color: greenyellow;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Product</li>
+        </ul>
+    </div>
+    <div id="section">
+    <h1>lorem ipsum dolor sit amet</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus quaerat dolore asperiores, magnam perferendis recusandae unde, nihil fugiat sit pariatur sequi ex ut sed? Vero, nihil! Repellat, neque. Tempora?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus quaerat dolore asperiores, magnam perferendis recusandae unde, nihil fugiat sit pariatur sequi ex ut sed? Vero, nihil! Repellat, neque. Tempora?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>    
+</body>
+</html>
