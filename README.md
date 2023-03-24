@@ -35,11 +35,12 @@ java 개발자 과정 프론트엔드 리포지토리
     - Javascript 기초
 
 4일차 그리드레이아웃 포토갤러리
-<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/gallery1" width="300">
+
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/gallery1.png" width="300">
 
 
 ## 5일차
 -프론트엔드 학습
-    -Javascript 마무리
+    - Javascript 마무리
     - Bootstrap 학습
     - 포트폴리오 웹사이트 만들기
