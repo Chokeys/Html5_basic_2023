@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            var count = 0;
+            var appendDoc = function(){
+                for(var i = 0; i < 20; i++){
+                    $('<h1> 무한스크롤' + count + '</h1>').css({
+                        'background-color' : 'rgb(' + count % 256 +' ,' + count % 256 + ',' + count % 256 +')',
+                        'color' : 'white'
+                    }).appendTo('body');
+                    count++;
+                }
+            }
+
+            appendDoc();
+
+            $(window).scroll(function(){
+                var scrollH = $(window).scrollTop() + $(window).height();
+                var docH = $(document).height();
+                console.log(scrollH)
+
+                if(scrollH >= docH -10){ // docH에서 10 정도 뺀값과 비교를 안하면 스크롤이 멈춤
+                    appendDoc();
+                }
+
+            });
+        });
+    </script>
+   
+</head>
+<body>
+    
+</body>
+</html>

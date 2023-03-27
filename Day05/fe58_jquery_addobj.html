@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jquery 객체 추가</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){ // => onload랑 같은 기능 (jQuery 에서)
+            for(var i =0 ; i < 10 ; i++){
+                $('<h1>Create object  ' + i + '</h1>').css({
+                    'background-color' : 'black',
+                    'color' : 'red'
+                }); //.appendTo('body'); // 이렇게도 줄수 있고
+                
+            $(body).append(h1); // 이렇게 도 줄 수 있다
+            }
+        //    $('body').append('<h1>Create object by jQuery</h1>'); // body 태그안에 추가하겠다고 명시 해줘야함 (이거는 반복문 안돌리고 하나만 입력상태)
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

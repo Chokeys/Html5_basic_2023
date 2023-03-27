@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>js/jquery연동</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+            window.onload=function(){
+               
+                var jumin1 = document.getElementById('jumin1');  // 인풋객체를 가져옴 
+                var jumin2 = document.getElementById('jumin2');  // selectorAll 보다 더 나은 방법
+
+                jumin1.onkeydown=function(){   //키보드 입력마다 이벤트 발생   // 익명함수의 형태 자주 쓰이니 익숙해지자
+                    console.log(jumin1.value.length);
+                    if(6<= jumin1.value.length){
+                        jumin2.focus(); // 주민번호 뒷자리 입력창으로 포커스 이동
+                    }
+                };
+
+                jumin2.onkeydown = function(e){
+                    var event = e || window.event; // jumin2에서 백스페이스(keyCode 8번)이고 jumin2값을 다 지웠으면.. // window.event 는 보험 (혹시 못받을 수 있으니 전체 페이지로 받겠다)
+                    if(event.keyCode == 8 && jumin2.value.length==0){
+                        jumin1.focus(); // 주민번호 앞자리 입력창으로 포커스 이동
+                    }
+                }
+                jumin1.focus();
+        };
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" maxlength="6" id="jumin1">
+        <span>-</span>
+        <input type="password" maxlength="7" id="jumin2">
+    </form>
+    
+</body>
+</html>
