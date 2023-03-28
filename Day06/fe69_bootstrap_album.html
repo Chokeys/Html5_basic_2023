@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>부트스트랩 앨범페이지 클로닝</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- 1. Bootstrap용 css CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- 3. Bootsicon용 css CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="icon" href="https://getbootstrap.com//docs/5.3/assets/img/favicons/favicon.ico">
+   <!-- jQuary 추가-->
+    <script 
+    src="https://code.jquery.com/jquery-3.6.4.min.js" 
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+     crossorigin="anonymous"></script>
+     <script>
+        $(document).ready(function(){
+            $('#btnLight').addClass('active');
+
+            $('img').css('border-redious','5px 5px 0 0'); //모든 이미지에 위쪽테두리 둥근모서리
+            //테마변경
+            $('#btnLight').click(function(){
+                $('html').attr('data-bs-theme','light');
+                $(this).addClass('active');
+                $('#btnDark').removeClass('active');
+            });
+            $('#btnDark').click(function(){
+                $('html').attr('data-bs-theme','dark');
+                $(this).addClass('active');
+                $('#btnLight').removeClass('active');
+            });
+        });
+     </script>
+</head>
+
+<body>
+    <!-- 맨바닥 테마(light/dark) 변경 버튼 영역-->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 bd-mode-toggle" style="z-index: 100;">
+        <button class="btn btn-primary py-2 dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown"
+            id="bd-theme" type="button" >
+            <i class="bi bi-brightness-high-fill"></i>
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <button id="btnLight" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="true">
+                    <i class="bi bi-brightness-high-fill"></i> Light
+                </button>
+            </li>
+            <li>
+                <button id="btnDark" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <i class="bi bi-moon-stars-fill"></i> Dark
+                </button>
+            </li>
+        </ul>
+    </div>
+    <!-- top 메뉴영역-->
+    <header data-bs-theme="dark">
+        <div class="collapse text-bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 py-3">
+                        <h4>About</h4>
+                        <p class="text-body-secondary">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quasi delectus
+                            excepturi aliquam adipisci culpa placeat illum sed incidunt maxime voluptatum quibusdam
+                            nesciunt, sint officia consequatur possimus repellendus eos a.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 py-3">
+                        <h4>Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Twitter</a></li>
+                            <li><a href="#" class="text-white">Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse text-bg-dark id=navbarHeader">
+            </div>
+        </div>
+        <div class=" navbar navar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <i class="bi bi-camera"></i>&nbsp;
+                    <strong>Album</strong>
+                </a>
+                <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="true"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- main 영역-->
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-5">
+                <div class="col-6 mx-auto ">
+                    <h1 class="fw-bold" style="color: red;">Album example</h1>
+                    <p class="lead text-body-secondary">
+                        Something short and leading about the collection below—its contents, the creator, etc. Make it
+                        short and sweet, but not too short so folks don’t simply skip over it entirely.
+                    </p>
+                    <p>
+                        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                        <a href="#" class="btn btn-secondary my-2">secondary action</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row row-cols-3 g-3">
+                    <!-- col 9개로 구성할 것 -->
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false" >
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card shdow-sm">
+                            <img src="http://via.placeholder.com/400x225" width="100%" height="225" focusable="false">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit totam odio
+                                    ullam tenetur omnis nostrum adipisci accusamus aut?
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-primary">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">10 min</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer 영역-->
+    <footer class="text-body-secondary py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">
+                Album site &copy; Bootstrap.
+            </p>
+            <P class="mb-0">
+                <a href="http://getboostrap.com" target="_blank">Visit the the homepage</a>
+
+            </P>
+        </div>
+    </footer>
+    <!-- 2. Bootsicon용 js는 body에 위치해야함-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
