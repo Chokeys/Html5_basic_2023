@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>핀터레스트 웹 클로닝</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- 1. Bootstrap용 css CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel=icon href="image/pinterest.ico">
+    <!-- 3. Bootsicon용 css CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* 초기화 */
+        * {
+            font-family: 'NanumGothic', 'Malgun Gothic', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: darkgrey;
+        }
+
+        /* 헤더영역 스타일 */
+        #main-header {
+            height: 60px;
+            background-color: #faf7f7;
+            position: relative;
+        }
+
+        .header-search-form {
+            float: left;
+            height: 26px;
+            padding: 7px;
+        }
+
+        .header-menu {
+            float: right;
+        }
+
+        .header-title {
+            position: absolute;
+            width: 200px;
+            height: 60px;
+            left: 50%;
+            margin-left: -100px;
+            margin-top: 10px;
+            background-image: url('image/logo.png');
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+        }
+
+        /* 풀다운 메뉴 영역 */
+        .outer-menu {
+            float: left;
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            padding: 10px 0;
+            position: relative;
+            text-align: center;
+            font-size: small;
+            font-weight: bold;
+            z-index: 9999;
+            margin-top: 10px;
+        }
+
+        .outer-menu:hover {
+            background-color: #e1dfdf;
+        }
+
+        .inner-menu {
+            display: none;
+            background-color: white;
+            margin-top: 10px;
+            width: 100%;
+            border-top: 1px solid #cccaca;
+            box-shadow: 0 2px 2px rgba(34, 25, 25, 0.5);
+        }
+
+        .inner-menu a {
+            display: block;
+            padding: 5px 10px;
+            z-index: 5000;
+        }
+
+        .inner-menu:hover {
+            background-color: #e1dfdf;
+        }
+
+        #main-navigation {
+            height: 30px;
+            background-color: #faf7f7;
+            border-top: 1px solid #cfcaca;
+            box-shadow: 1px 3px 3px rgba(34, 25, 25, 0.5);
+        }
+
+        #main-navigation>ul {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #main-navigation>ul>li {
+            display: inline;
+            padding: 0 5px;
+            line-height: 30px;
+            font-size: small;
+            color: #524d4d;
+            text-shadow: 0 1px 1px white;
+        }
+
+        #main-navigation>ul>li:hover {
+            background-color: #e1dfdf;
+            border-radius: 2px;
+        }
+
+        /* input 영역 */
+
+        form {
+
+            position: relative;
+        }
+        .form .fa-search {
+
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #9ca3af;
+        }
+        .form span {
+
+            position: absolute;
+            right: 17px;
+            top: 13px;
+            padding: 2px;
+            border-left: 1px solid #d1d5db;
+        }
+        .left-pan {
+            padding-left: 7px;
+        }
+        .left-pan i {
+            padding-left: 10px;
+        }
+        .form-input {
+            width: 250px;
+            height: 55px;
+            text-indent: 33px;
+            border-radius: 10px;
+        }
+        .form-input:focus {
+
+            box-shadow: none;
+            border: none;
+        }
+
+        /* 카드 영역 */
+        .paper {
+            width: 210px;
+            margin-top: 10px;
+            padding: 15px 15px 0;
+            font-size: smaller;
+            background-color: white;
+            box-shadow: 0 1px 2px rgba(34, 25, 25, 0.5);
+            border-radius: 1px;
+        }
+
+        .paper-description {
+            margin: 10px 0;
+        }
+
+        .paper-content {
+            margin: 0 -15px;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #f2f0f0;
+            overflow: hidden;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .paper-link {
+            display: block;
+            float: left;
+        }
+
+        .paper-text {
+            float: left;
+            width: 150px;
+            margin-left: 10px;
+        }
+
+        /* 반응형 웹 영역 */
+        #main-section {
+            width: 920px;
+            margin: 0 auto;
+        }
+
+        /* 한줄에 세개의 카드만 */
+        @media screen and (max-width:920px) {
+            #main-section {
+                width: 690px;
+            }
+        }
+
+        /* 한줄에 카드 네개 */
+        @media screen and (min-width:920px) and (max-width:1150px) {
+            #main-section {
+                width: 920px;
+            }
+        }
+
+        /* 한줄에 카드 다섯개 */
+        @media screen and (min-width:1150px) and (max-width:1380px) {
+            #main-section {
+                width: 1150px;
+            }
+        }
+
+        /* 한줄에 카드 여섯개 */
+        @media screen and (min-width:1380px) {
+            #main-section {
+                width: 1380px;
+            }
+        }
+
+        #darken-background {
+            display: none;
+        }
+    </style>
+
+    <!-- jQuary 추가-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- Desandro libraries CDN-->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //풀다운 메뉴 이벤트
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+
+            // masonry layout + imageload pluign
+            $('#main-section').imagesLoaded(function () {
+                $('#main-section').masonry({
+                    itemSelector: '.paper',
+                    columnWidth: 220,
+                    isAnimated: true,
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!--헤더-->
+    <header id="main-header">
+        <div class="header-search-form">
+            <div class="form">
+                <i class="fa fa-search"></i>
+                <input type="text" class="form-control form-input" placeholder="Search anything...">
+                <span class="left-pan"><i class="fa fa-microphone"></i></span>
+              </div>
+        </div>
+        <h1 class="header-title">Pingterest</h1>
+        <div class="header-menu">
+            <ul class="outer-menu">
+                <li>
+                    <a href="#">정보</a>
+                    <ul class="inner-menu">
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="outer-menu">
+                <li>
+                    <a href="#">프로필</a>
+                    <ul class="inner-menu">
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!--내비게이션 영역-->
+    <nav id="main-navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--메인섹션 영역-->
+    <section id="main-section">
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/750">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/690">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/720">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/770">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/790">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/940">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/590">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/440">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/722">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/715">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180" src="https://picsum.photos/600/629">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="180 " src="https://picsum.photos/600/635">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/651">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/717">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/758">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/531">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/698">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/674">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/817">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/820">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div>
+        <div class="paper">
+            <div class="paper-holder">
+                <img width="190" src="https://picsum.photos/600/724">
+            </div>
+            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <div class="paper-content">
+                <a class="paper-link" href="#">
+                    <img src="image/profile.gif" width="30">
+                </a>
+                <p class="paper-text">About me...</p>
+            </div>
+        </div> -->
+    </section>
+
+    <!--라이트박스 영역-->
+    <div id="darken-background">
+        <div id="lightbox">
+            <div class="user-info">
+                <a class="user-info-image" href="#">
+                    <img src="http://via.placeholder.com/70x70">
+                </a>
+                <div class="user-info-text">
+                    <h3>User</h3>
+                    <p>Lorem ipsum dolor sit amet</p>
+                </div>
+                <hr class="lightbox-splitter">
+                <img src="http://via.placeholder.com/600x750">
+            </div>
+        </div>
+
+        <!-- 2. Bootsicon용 js는 body에 위치해야함-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

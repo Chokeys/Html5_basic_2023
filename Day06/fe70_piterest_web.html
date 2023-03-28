@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>핀터레스트 웹 클로닝</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- 1. Bootstrap용 css CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel=icon href="image/pinterest.ico">
+    <!-- 3. Bootsicon용 css CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        /*main-header*/
+        #main-header{
+            height: 50px;
+            position: relative;
+        }
+        .header-left-menu{
+            float: left;
+        }
+        .logo, .home{
+            float: left;
+        }
+        .home{
+            white-space: nowrap;
+            height: 48px;
+            min-width: 60px;
+            text-align: center;
+            background-color: black;
+            color: white;
+            border-radius: 24px;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .logo{
+            width: 50px;
+            height: 48px;
+        }
+        #home{
+            color: white;
+        }
+        .headr-menu{
+
+        }
+        .outer-menu{
+            width: 100px; height: 20px;
+            line-height: 20px;
+            padding: 10px 0;
+            position: relative;
+            font-weight: bold;
+        }
+        .inner-menu{
+            display: visible;
+            background-color: white;
+            margin-top: 10px;
+            width: 100%;
+            border-top: 1px solid #cccaca;
+            box-shadow:  0 2px 2px rgba(34, 25, 25, 0.5);
+        }
+        .inner-menu a{
+            display: block;
+            padding: 5px 10px;
+            z-index: 5000;
+        }
+        .inner-menu a:hover{
+            background-color: #e1dfdf;
+        }
+    </style>
+    <!-- jQuary 추가-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <!-- Desandro libraries CDN-->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+</head>
+
+<body>
+    <!-- 최상단 메뉴영역 -->
+    <div class="container-fluid" style="margin: 0 10px;">
+        <div class="row">
+            <div class="col py-2">
+                <header id="main-header">
+                    <div class="header-left-menu">
+                        <div class="logo d-flex justify-content-center align-items-center">
+                            <img src="image/pinterest.png" alt="핀터레스트 아이콘" width="24" height="24">
+                        </div>
+                        <div class="home">
+                            <div class="inner-home">
+                                <span><a href="#" id="home">홈</a></span>
+                            </div>
+                        </div>
+                        <div class="header-menu">
+                            <ul class="outer-menu">
+                                <li>만들기</li>
+                                <ul class="inner-menu">
+                                    <li>아이디어 핀 만들기</li>
+                                    <li>핀 만들기</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-search-form">
+                        <form action="">
+                            <input type="text" name="search">
+                        </form>
+                    </div>
+                    <div class="header-right-menu">
+                        <div class="bell">종</div>
+                        <div class="msg">메시지창</div>
+                        <div class="profile">프로필</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 사진 갤러리 영역 -->
+    <div class="container-fluid" style="margin: 0 10px;">
+        <section id="main-section">
+            <div class="card shdow-sm">
+                <a><img width="220" src="http://via.placeholder.com/220x350"></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- 라이트박스 영역 -->
+    <div id="darken-background">
+        <div id="lightbox">
+            <div class="information">
+            </div>
+            <hr class="lightbox-splitter">
+            <img src="https://via.placeholder.com/470x750">
+        </div>
+
+    </div>
+
+    <!-- 2. Bootsicon용 js는 body에 위치해야함-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
