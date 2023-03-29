@@ -1,0 +1,108 @@
+
+/* 구글폰트로 웹사이트 글자체 변경 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;900&display=swap');
+
+*{
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: #f9f9f9;
+    min-height: 100vh;  /* 100vw = 100%  */
+    overflow-x: hidden; /*  x축 스크롤 금지 */
+}
+
+header{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between; /* flex(grid 레이아웃) 꾸밀때 가로정렬  */
+    align-items: center; /* 수직 중앙정렬 */
+    z-index: 100;
+}
+.logo{
+    font-size: 2em; /* 2배 */
+    font-weight: 900;
+    color: #359381;
+    pointer-events: none; /* 마우스 올렸을때 아무 반응 안하는거 */
+}
+
+.navigation a {
+    text-decoration-line : none;
+    color: #359381;
+    font-weight: 500;
+    margin: 0 10px;
+    padding: 5px 15px 8px 15px;
+    border-radius: 20px;
+}
+
+.navigation a:hover,
+.navigation a.active{
+    background-color: #359381;
+    color: #f9f9f9;
+}
+.parallax{
+    position: relative;
+    display: flex; /* flex 레이아웃 */
+    justify-content: center;
+    align-items: center; /* 수평 중앙정렬, 수직 중앙정렬 */
+    height: 100vh; /* == 100% */
+
+}
+.parallax img{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw;
+    pointer-events: none;
+}
+
+#text{
+    position: absolute;
+    font-size: 5em;
+    font-weight: 900;
+    color: floralwhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    
+}
+.contents{
+    position: relative;
+    background-color: #003329;
+    padding: 50px 100px;
+}
+
+.contents>h2{
+    font-size: 3em;
+    font-weight: 600;
+    text-align: center;
+    color: floralwhite;
+    margin-bottom: 10px;
+}
+
+.contents>p{
+    font-size: 1em;
+    font-weight: 300;
+    color: white;
+}
+
+footer{
+    position: relative;
+    width: 100%;height: 110px;
+    bottom: 0px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: #359381;
+}
+footer a{
+    text-decoration-line: none;
+    color: #003329;
+    display: inline-block;
+    margin: 0 10px 10px 10px;
+}
+
+@media screen {
+    
+}

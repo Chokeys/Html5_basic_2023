@@ -30,12 +30,12 @@
         <header id="main-header">
             <div class="header-search-form">
                 <form>
-                <div class="form">
-                    <i class="fa fa-search"></i>
-                    <input type="text" class="form-control form-input" placeholder="Search anything...">
-                    <span class="left-pan"><i class="fa fa-microphone"></i></span>
-                </div>
-            </form>
+                    <div class="form">
+                        <i class="fa fa-search"></i>
+                        <input type="text" class="form-control form-input" placeholder="Search anything...">
+                        <span class="left-pan"><i class="fa fa-microphone"></i></span>
+                    </div>
+                </form>
             </div>
             <h1 class="header-title">Pingterest</h1>
         </header>
@@ -47,19 +47,21 @@
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+            <!-- 드롭다운 메뉴 영역 -->
+            <div class="btn-group profile-loc">
+                <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">프로필</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">About me</a></li>
+                    <li><a class="dropdown-item" href="#">Security</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Log out</a></li>
+                </ul>
+            </div>
         </nav>
-        <!-- 드롭다운 메뉴 영역 -->
-        <div class="btn-group profile-loc">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">프로필</button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">About me</a></li>
-                <li><a class="dropdown-item" href="#">Security</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Log out</a></li>
-            </ul>
-        </div>
     </div>
 
 
