@@ -56,7 +56,7 @@ java 개발자 과정 프론트엔드 리포지토리
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/album_theme.png" width="700">
 
 ## 7일차
--프론트앤드 학습
+- 프론트앤드 학습
     - 핀터레스트 스타일 웹페이지 마무리
         - Bootstrap 5.3.0
         - jQuary 3.6.4
