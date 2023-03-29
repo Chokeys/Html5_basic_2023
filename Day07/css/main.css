@@ -1,0 +1,275 @@
+
+/* 초기화 */
+* {
+font-family: 'NanumGothic', 'Malgun Gothic', sans-serif;
+}
+
+a {
+text-decoration: none;
+}
+
+img {
+border: 0;
+}
+
+li {
+list-style: none;
+}
+
+body {
+background-color: darkgrey;
+}
+
+/* 헤더영역 스타일 */
+#main-header {
+height: 50px;
+background-color: yellow;
+position: relative;
+}
+
+.header-search-form {
+float: left;
+height: 26px;
+padding: 7px;
+}
+
+.header-menu {
+float: right;
+}
+
+.header-title {
+position: absolute;
+width: 200px;
+height: 60px;
+left: 105px;
+margin-left: -100px;
+margin-top: 10px;
+background-image: url('../image/logo.png');
+background-repeat: no-repeat;
+text-indent: -9999px;
+}
+
+/* 풀다운 메뉴 영역 */
+.outer-menu {
+float: left;
+width: 100px;
+height: 20px;
+line-height: 20px;
+padding: 10px 0;
+position: relative;
+text-align: center;
+font-size: small;
+font-weight: bold;
+z-index: 9999;
+margin-top: 10px;
+}
+
+.outer-menu:hover {
+background-color: #e1dfdf;
+}
+
+.inner-menu {
+display: none;
+background-color: white;
+margin-top: 10px;
+width: 100%;
+border-top: 1px solid #cccaca;
+box-shadow: 0 2px 2px rgba(34, 25, 25, 0.5);
+}
+
+.inner-menu a {
+display: block;
+padding: 5px 10px;
+z-index: 5000;
+}
+
+.inner-menu:hover {
+background-color: #e1dfdf;
+}
+
+/* 네비게이션 영역 */
+#main-navigation {
+height: 30px;
+background-color: yellow;
+/* border-top: 1px solid #cfcaca;
+box-shadow: 1px 3px 3px rgba(34, 25, 25, 0.5); */
+}
+
+#main-navigation>ul {
+position: absolute;
+margin-left: -10px;
+overflow: hidden;
+text-align: center;
+}
+
+#main-navigation>ul>li {
+display: inline;
+padding: 0 5px;
+line-height: 30px;
+font-size: small;
+color: #524d4d;
+text-shadow: 0 1px 1px white;
+}
+
+#main-navigation>ul>li:hover {
+background-color: #e1dfdf;
+border-radius: 2px;
+}
+
+/* input 영역 */
+
+form {
+position: absolute;
+left: 280px;
+}
+
+.form .fa-search {
+position: absolute;
+top: 20px;
+left: 20px;
+color: #9ca3af;
+}
+
+.form span {
+position: absolute;
+right: 17px;
+top: 13px;
+padding: 2px;
+border-left: 1px solid #d1d5db;
+}
+
+.left-pan {
+padding-left: 7px;
+}
+
+.left-pan i {
+padding-left: 10px;
+}
+
+.form-input {
+width: 250px;
+height: 60px;
+text-indent: 33px;
+border-radius: 10px;
+}
+
+.form-input:focus {
+
+box-shadow: none;
+border: none;
+}
+
+/* 카드 영역 */
+.paper {
+width: 210px;
+margin-top: 35px;
+/* padding: 15px 15px 0; */
+font-size: smaller;
+background-color: white;
+box-shadow: 0 1px 2px rgba(34, 25, 25, 0.5);
+border-radius: 10px;
+}
+
+.paper-img{
+border-radius: 10px;
+}
+
+.paper-description {
+margin: 10px 0;
+}
+
+.paper-content {
+z-index: 1000;
+position: absolute;
+bottom: 2px; left: 5px;
+margin-top: 10px;
+padding: 5px;
+background-color: rgba(255, 255, 255, 0.5);
+overflow: hidden;
+border-radius: 0 0 10px 10px;
+border-radius: 5px;
+}
+
+.paper-link {
+display: block;
+float: left;
+}
+
+.paper-text {
+float: left;
+width: 150px;
+margin-left: 10px;
+margin-bottom: 0;
+}
+
+/* 반응형 웹 영역 (메인 섹션) */
+#main-section {
+width: 920px;
+margin: 0 auto;
+padding-top: 50px;
+}
+
+/* 한줄에 세개의 카드만 */
+@media screen and (max-width:920px) {
+#main-section {
+width: 690px;
+}
+}
+
+/* 한줄에 카드 네개 */
+@media screen and (min-width:920px) and (max-width:1150px) {
+#main-section {
+width: 920px;
+}
+}
+
+/* 한줄에 카드 다섯개 */
+@media screen and (min-width:1150px) and (max-width:1380px) {
+#main-section {
+width: 1150px;
+}
+}
+
+/* 한줄에 카드 여섯개 */
+@media screen and (min-width:1380px) {
+#main-section {
+width: 1380px;
+}
+}
+
+/* 라이트박스 영역 */
+#darken-background {
+display: none;
+background-color: rgba(90, 90, 90, 0.7);
+z-index: 10000;
+/* 가장위로 올림 */
+overflow-y: scroll;
+/* 영역 위치 변경*/
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 100%;
+}
+
+#lightbox {
+width: 700px;
+margin: 20px auto;
+padding: 15px;
+border: 1px solid #999999;
+border-radius: 10px;
+background-color: white;
+text-align: center;
+}
+
+.head-wrapper {
+width: 100%;
+position: fixed;
+z-index: 9000;
+}
+
+.profile-loc {
+position: absolute;
+top: 15px;
+left: 1800px;
+}
