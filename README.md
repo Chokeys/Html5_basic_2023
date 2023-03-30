@@ -72,7 +72,7 @@ java 개발자 과정 프론트엔드 리포지토리
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio.png" width="700">
 
 Parallax Scrolling Web.
-
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio2.png" width="700">
 
 
 ## 8일차
