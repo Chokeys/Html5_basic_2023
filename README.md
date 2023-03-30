@@ -8,7 +8,7 @@ java 개발자 과정 프론트엔드 리포지토리
     - 웹 기본구조
     - HTML 5 기본태그
     
-1일차 학습내용
+★ 1일차 학습내용
 <!-- ![멀티미디어](https://github.com/Exit-Chokey/basic-html-2023/blob/main/image/day1.png) 사이즈 못바꿈 -->
 <img src = "https://github.com/Exit-Chokey/basic-html-2023/blob/main/image/day1.png" width="300">
 
@@ -24,7 +24,7 @@ java 개발자 과정 프론트엔드 리포지토리
     - HTML 레이아웃
     - Grid 레이아웃
 
-3일차 레이아웃
+★ 3일차 레이아웃
 
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/day3.png" width="300">
 
@@ -35,7 +35,7 @@ java 개발자 과정 프론트엔드 리포지토리
     - Javascript 기초
     - jQuery
 
-4일차 그리드레이아웃 포토갤러리
+★ 4일차 그리드레이아웃 포토갤러리
 
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/gallery1.png" width="300">
 
@@ -51,7 +51,7 @@ java 개발자 과정 프론트엔드 리포지토리
     - Bootstrap Album example 마무리
     - 핀터레스트 스타일 웹페이지 클로닝
 
-6일차 Bootstrap 앨범 클로닝
+★ 6일차 Bootstrap 앨범 클로닝
 
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/album_theme.png" width="700">
 
@@ -67,11 +67,12 @@ java 개발자 과정 프론트엔드 리포지토리
     - Single Page Template
         - Boorstrap
 
-7일차 핀터레스트 스타일 클로닝
+★ 7일차 핀터레스트 스타일 클로닝
 
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio.png" width="700">
 
-Parallax Scrolling Web.
+★ Parallax Scrolling Web
+
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio2.png" width="700">
 
 
@@ -79,6 +80,6 @@ Parallax Scrolling Web.
 - 프론트엔트 학습
     - Single Page Template
     - SB Admin Page
-Grayscale Single Page Template
+★ Grayscale Single Page Template
 
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio3.gif" width="700">

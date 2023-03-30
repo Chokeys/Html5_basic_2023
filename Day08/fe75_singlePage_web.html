@@ -47,6 +47,24 @@
             $(document).scroll(function () {
                 navbarShrink();
             });
+
+            $('#menu_about').click(function(){
+               $(this).addClass('active');
+               $("menu_portfolio") .removeClass('active');
+               $("menu_signup") .removeClass('active');
+            });
+
+            $('#menu_portfolio').click(function(){
+               $(this).addClass('active');
+               $("menu_about") .removeClass('active');
+               $("menu_signup") .removeClass('active');
+            });
+
+            $('#menu_signup').click(function(){
+               $(this).addClass('active');
+               $("menu_portfolio") .removeClass('active');
+               $("menu_about") .removeClass('active');
+            });
         });
     </script>
 </head>
@@ -64,9 +82,9 @@
             </button>
             <div id="navbarResponsive" class="navbar-collapse"> <!--collapse가 사라지게 하는 것-->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="#about" class="nav-link" >About</a></li>
-                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="#signup" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a id="menu_about" href="#about" class="nav-link" >About</a></li>
+                    <li class="nav-item"><a id="menu_portfolio" href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a id="menu_signup" href="#signup" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
