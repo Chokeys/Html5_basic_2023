@@ -100,9 +100,17 @@ java 개발자 과정 프론트엔드 리포지토리
 - 프론트엔드 실습
     - SB Admin Page 마무리
 
+★ SB Admin Page - fnish
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio4-Fnish.gif" width="700">
+
 ## 11일차
 - 프론트엔드 실습
-    - 
+    - 이지스퍼블리싱 Web만들기 실습
+    - 이큽립스 jsp파일 연계 + 구현
+
+★ Dream jeju Web 
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio5.gif" width="700">
+
 
 ## 12일차
 - 프론트엔드 실습
