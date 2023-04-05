@@ -47,6 +47,10 @@ java 개발자 과정 프론트엔드 리포지토리
     - Bootstrap 학습 -> form, button 구현
     - Bootstrap Album example 클로닝
 
+★ 5일차 에니메이션
+
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/Animation.png" width="700">
+
 # 6일차
 - 프론트앤드 학습
     - Bootstrap Album example 마무리
