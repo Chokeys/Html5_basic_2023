@@ -129,4 +129,4 @@ java 개발자 과정 프론트엔드 리포지토리
 
 ★ 12일차 다음 우편번호 + Quilljs editor
 
-<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/board_postcode.png" width="700">
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/board_postcode.png" width="500">
