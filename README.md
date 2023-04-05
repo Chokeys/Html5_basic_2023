@@ -49,7 +49,7 @@ java 개발자 과정 프론트엔드 리포지토리
 
 ★ 5일차 에니메이션
 
-<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/Animation.png" width="700">
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/Animation.gif" width="700">
 
 # 6일차
 - 프론트앤드 학습
@@ -75,11 +75,11 @@ java 개발자 과정 프론트엔드 리포지토리
 
 ★ 7일차 핀터레스트 스타일 클로닝
 
-<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio.png" width="700">
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio.gif" width="700">
 
 ★ Parallax Scrolling Web
 
-<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio2.png" width="700">
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/portfolio2.gif" width="700">
 
 
 ## 8일차
@@ -126,4 +126,4 @@ java 개발자 과정 프론트엔드 리포지토리
     - Quilljs editor -> 자바스크립트 텍스트 에디터 
 
 ★ 12일차 Dream jeju Web 
-<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/board + postcode.png" width="700">
+<img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/board_postcode.png" width="700">
