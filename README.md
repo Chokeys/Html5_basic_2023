@@ -48,23 +48,9 @@ java 개발자 과정 프론트엔드 리포지토리
     - Bootstrap Album example 클로닝
  
 
-
-
 ★ 5일차 에니메이션
 
 <img src = "https://raw.githubusercontent.com/Exit-Chokey/basic-html-2023/main/image/Animation.gif" width="700">
-
-
-<img src = "https://raw.githubusercontent.com/Chokeys/basic-html_2023/main/일정등록.gif" width="700">
-
-
-
-
-
-
-
-
-
 
 
 # 6일차
