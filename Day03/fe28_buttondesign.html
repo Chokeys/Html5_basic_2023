@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>버튼 만들기</title>
+    <style>
+        .font_big { font-size: 25px;}
+        .font_bold{font-weight: bold;}
+        .font_center{text-align: center;}
+        .button{
+            width: 200px;
+            height: 60px;
+            background-color: skyblue;
+            border-width: 10px;
+            border-style: solid;
+            border-color:blue  black yellow;
+            border-radius: 40px;
+            box-shadow: 5px 5px 5px 5px  #a9a9a9;
+        }
+        .button > a{
+            display: block;
+            line-height: 60px; 
+            text-decoration: none;
+            /* 높이만큼 line-height을 주니깐 딱 중앙에 위치해지네 */
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <a href="https://www.google.com" target="_blank" class="font_big  font_bold font_center">구글</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        // 순서2. 페이지가 렌더링이 완료되고 나면 실행( = 결국 최종적으로 실행된다는 말)
+        window.onload = function(){
+        //style 변경은 body에 마지막에 위치해야함! 
+        document.querySelector('h1').style.backgroundColor ='red';
+        document.querySelector('h1').style.color ='white';
+        document.querySelector('h1').style.fontSize = '50px';
+        document.querySelector('h1').style.fontStyle = 'italic';
+        };
+    </script>
+    
+</head>
+<body> 
+    <h1>lorem ispum dolor sit amet.</h1>
+    <p>lorem ispum dolor sit amet.</p>
+
+    <script>
+        
+
+        var h1Style = document.querySelector('h1').style;
+        h1Style.backgroundColor = 'blue';// 순서1. 페이지 렌더링 될때 같이 실행되는 부분
+        
+    </script>
+</body>
+</html>

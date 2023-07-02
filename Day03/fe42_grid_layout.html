@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>그리드레이아웃2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #wrap{
+            width: 800px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(4,200px);
+        }
+        .box{
+            padding: 80px;
+            color: white;
+            font-weight: bold;
+            text-align: center;   
+        }
+        .box1{
+            background-color: #3689ff;
+            grid-column: 1/4;
+        }
+        .box2{
+            background-color: #00cf12;
+            grid-row: 2/4;
+        }
+        .box3{
+            background-color: #ff9019;
+            grid-column: 2/4;
+            grid-row: 2/4;
+        }
+        .box4{
+            background-color: #ffd000;
+            grid-row: 4/4;
+            grid-column: 1/4;  
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>      
+    </div>
+</body>
+</html>

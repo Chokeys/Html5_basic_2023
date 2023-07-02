@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery2</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" 
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#box').css({
+                width: '100px',
+                height: '100px',
+                'background-color' : 'orange'
+            }).on('click',function(){
+                $(this).css('background-color','red');
+                alert('안녕~!!!!!!')
+            }).on('mouseenter',function(){
+                $(this).css('background-color','blue');
+                $(this).css('border-radius','50%');
+            }).on('mouseleave',function(){
+                $(this).css('background-color','orange');
+                $(this).css('border-radius','0');
+        });
+
+    $('h1').hover(function(){
+        $(this).css({
+            'background-color':'red',
+            'color':'white'
+        });
+    },function(){
+        $(this).css({
+            'background-color':'',
+            'color':''
+        });
+    });
+
+    // $('h1').on(  'mouseenter',function(){
+    //     $(this).css({
+    //         'background-color':'red',
+    //         'color':'white'
+    //     });
+    // },function(){
+    //     $(this).css({
+    //         'background-color':'',
+    //         'color':''
+    //     });
+    // });
+    
+     $('a').click(function(e){
+            alert('이동을 금지합니다.');
+        
+            e.preventDefault(); // 이벤트 제거!
+    })
+    
+    $('#btnToggle').click(function(){
+        $('.page').slideToggle(500); // toggle(),fadeToggle() 등이 있음
+    });
+    $('#anim').click(function(e){
+        $('#box') .animate({
+        width: '300px',
+        opacity: 0.2,
+    },1000);
+    }).dblclick(function(e){
+        $('#box').animate({
+            width: '100px',
+            opacity: 1.0,
+        },1000);
+    });
+    });
+    </script>
+
+</head>
+<body>
+    <div id="box"></div>
+    <br>
+    <h1>CLICK</h1>
+    <br>
+    <a href="https://www.google.com" target="_blank">구글</a>
+    <br>
+    <button id="anim">애니메이션</button>
+    <br>
+    <input type="button" value="show" id="btnToggle">
+    <div class="page"> 
+        <h1>Lorem ipsum dolor sit amet </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem dolorum facere est debitis voluptatum nihil impedit amet cum maiores accusamus sit quia, qui saepe beatae corrupti dolores recusandae assumenda!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex voluptatem dolorum facere est debitis voluptatum nihil impedit amet cum maiores accusamus sit quia, qui saepe beatae corrupti dolores recusandae assumenda</p>
+    </div>
+</body>
+</html>

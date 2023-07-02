@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='css/jquery.lightbox.css'>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous">
+    </script> <!-- jquery slim에서는 작동안함-->
+    <script src="js/jquery.lightbox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('a.light').lightBox();
+        });
+    </script>
+</head>
+<body>
+    <a class="light" href="photos/image1.jpg"><img src="photos/thumb_image1.jpg"></a>
+    <a class="light" href="photos/image2.jpg"><img src="photos/thumb_image2.jpg"></a>
+    <a class="light" href="photos/image3.jpg"><img src="photos/thumb_image3.jpg"></a>
+    <a class="light" href="photos/image4.jpg"><img src="photos/thumb_image4.jpg"></a>
+
+    
+</body>
+</html>

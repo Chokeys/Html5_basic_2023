@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #wrap{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+             grid-template-rows: 1fr 2fr;
+             row-gap: 10px;
+             column-gap: 20px;
+        }
+        .item{
+            padding: 10px;
+            background-color: #eeeeee;
+        }
+        .item:nth-child(2n+1){
+            background-color: #bbbbbb;
+        }
+    </style>
+ 
+</head>
+<body>
+    <div id="wrap">
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, at optio animi impedit eum iure asperiores aliquid vel provident nemo dignissimos error fugit vitae! Inventore et ipsam tempore quas magnam!</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, at optio animi impedit eum iure asperiores aliquid vel provident nemo dignissimos error fugit vitae! Inventore et ipsam tempore quas magnam!</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, at optio animi impedit eum iure asperiores aliquid vel provident nemo dignissimos error fugit vitae! Inventore et ipsam tempore quas magnam!</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, at optio animi impedit eum iure asperiores aliquid vel provident nemo dignissimos error fugit vitae! Inventore et ipsam tempore quas magnam!</div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, at optio animi impedit eum iure asperiores aliquid vel provident nemo dignissimos error fugit vitae! Inventore et ipsam tempore quas magnam!</div>
+      
+    </div>
+    
+    
+</body>
+</html>

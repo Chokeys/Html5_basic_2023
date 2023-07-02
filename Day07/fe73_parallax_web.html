@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Parallax Scrolling Web</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- 1. Bootstrap용 css CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/parallax.css'>
+    <link rel="icon" href="image/ui.ico">
+    <!-- jQuary 추가-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <script src='script/parallax.js'></script>
+
+    <script>
+$(document).ready(function(){
+            var image = document.getElementById('hill1');
+            $('.contents').css({
+                'position' : 'absolute',
+                'top' : image.height + 'px'
+            });
+        });
+
+// 브라우저 사이즈 바뀔때마다
+        $(window).resize(function(){
+            var image = document.getElementById('hill1');
+            console.log(`${image.width} x ${image.height}`);
+            // console.log(image.width + 'x' + image.height);
+
+            $('.contents').css({
+                'position' : 'absolute',
+                'top' : image.height + 'px'
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <header>
+        
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Service</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Section 영역-->
+    <section class="parallax">
+        
+        <img src="image/hill1.png" id="hill1"> <!-- 맨 뒤 -->
+        <img src="image/hill2.png" id="hill2">
+        <img src="image/hill3.png" id="hill3">
+        <img src="image/hill4.png" id="hill4">
+        <img src="image/hill5.png" id="hill5">
+        <img src="image/tree.png" id="tree">
+        <h2 id="text">Parallax Website</h2>
+       
+        <img src="image/leaf.png" id="leaf">
+        <img src="image/plant.png" id="plant"> <!-- 맨 앞 -->
+
+        
+    </section>
+    <section class="contents">
+        <h2>Parallax Scrolling Web</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quod, expedita exercitationem reprehenderit odit totam fugiat nam unde vitae eius tempora nihil at et aliquam laborum officia dicta repellat optio sunt voluptatem mollitia. Autem iste ab, non id assumenda error voluptas aut quod animi blanditiis eligendi obcaecati consequatur corporis tempora aperiam eaque quisquam in dolorum voluptatem possimus! Enim officiis laboriosam cum possimus, ipsa cumque! Pariatur deserunt nulla qui, eveniet ullam expedita labore aut. Alias, suscipit ut. In magni perferendis quam laudantium harum, eum necessitatibus nobis temporibus. Explicabo maiores, aut animi placeat officia reiciendis. Cum illo nemo ex maiores, omnis, perspiciatis tempore quibusdam repellat accusantium odit aliquam alias id beatae a enim rem laudantium vel? Beatae earum quo id ipsam quis nam sit voluptate sequi ducimus consequatur delectus provident tempora eaque culpa cumque eos quos, ea aliquam molestias aspernatur nisi iusto ut fugiat quasi? Saepe eius, omnis aspernatur suscipit voluptatibus quo distinctio dolor temporibus nam corporis voluptatum sequi quos deleniti excepturi facilis. Voluptate debitis illum ullam necessitatibus, assumenda est vitae quos culpa maiores maxime itaque aspernatur quasi ad error expedita aperiam, neque beatae, officiis impedit ex exercitationem fugiat laborum similique! Aspernatur, quos, recusandae dicta iusto qui molestias repudiandae ex expedita eligendi iure eaque reprehenderit consequuntur quod at nihil cupiditate ducimus voluptatum odit fugit ipsum beatae corporis. Temporibus quaerat rerum nobis atque sed omnis tempore architecto a corporis. Expedita, nulla ad, repellat dolore ea adipisci quisquam, dicta tempora blanditiis deserunt consequuntur illo vero velit qui. Sint tempore rerum illo minima, expedita nulla porro error eius eaque beatae tempora vitae magnam esse facere iste non, modi explicabo quos eos perferendis earum! Magnam, numquam, molestias delectus, voluptates dolorem rem pariatur maiores et soluta corporis itaque perferendis odit. Explicabo incidunt voluptates officia dolorum commodi. Soluta, reiciendis consectetur cupiditate esse doloremque nobis rem voluptas? Facilis, ipsa!</p> <br><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quod, expedita exercitationem reprehenderit odit totam fugiat nam unde vitae eius tempora nihil at et aliquam laborum officia dicta repellat optio sunt voluptatem mollitia. Autem iste ab, non id assumenda error voluptas aut quod animi blanditiis eligendi obcaecati consequatur corporis tempora aperiam eaque quisquam in dolorum voluptatem possimus! Enim officiis laboriosam cum possimus, ipsa cumque! Pariatur deserunt nulla qui, eveniet ullam expedita labore aut. Alias, suscipit ut. In magni perferendis quam laudantium harum, eum necessitatibus nobis temporibus. Explicabo maiores, aut animi placeat officia reiciendis. Cum illo nemo ex maiores, omnis, perspiciatis tempore quibusdam repellat accusantium odit aliquam alias id beatae a enim rem laudantium vel? Beatae earum quo id ipsam quis nam sit voluptate sequi ducimus consequatur delectus provident tempora eaque culpa cumque eos quos, ea aliquam molestias aspernatur nisi iusto ut fugiat quasi? Saepe eius, omnis aspernatur suscipit voluptatibus quo distinctio dolor temporibus nam corporis voluptatum sequi quos deleniti excepturi facilis. Voluptate debitis illum ullam necessitatibus, assumenda est vitae quos culpa maiores maxime itaque aspernatur quasi ad error expedita aperiam, neque beatae, officiis impedit ex exercitationem fugiat laborum similique! Aspernatur, quos, recusandae dicta iusto qui molestias repudiandae ex expedita eligendi iure eaque reprehenderit consequuntur quod at nihil cupiditate ducimus voluptatum odit fugit ipsum beatae corporis. Temporibus quaerat rerum nobis atque sed omnis tempore architecto a corporis. Expedita, nulla ad, repellat dolore ea adipisci quisquam, dicta tempora blanditiis deserunt consequuntur illo vero velit qui. Sint tempore rerum illo minima, expedita nulla porro error eius eaque beatae tempora vitae magnam esse facere iste non, modi explicabo quos eos perferendis earum! Magnam, numquam, molestias delectus, voluptates dolorem rem pariatur maiores et soluta corporis itaque perferendis odit. Explicabo incidunt voluptates officia dolorum commodi. Soluta, reiciendis consectetur cupiditate esse doloremque nobis rem voluptas? Facilis, ipsa!</p>
+    </section>
+
+    <!-- <footer>
+        <nav>
+            <a href="#">Blog</a>
+            <span> | </span>
+            <a href="#">Github</a>
+        </nav>
+        <p>
+            <span>autor : Codehal</span><span> | </span>
+            <span>editor : hugoMGSung</span><span> | </span>
+            <span>email : personar95@gmail</span><br>
+            <span>Copyright&copy; 2022. Codehal.All Right Reserved</span>
+        </p>
+    </footer> -->
+    <!-- 2. Bootsicon용 js는 body에 위치해야함-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

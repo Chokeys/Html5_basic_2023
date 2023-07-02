@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #running{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        window.onload = function(){ // function() { (익명함수) or () => { (익명 람다함수) 같은 기능
+            var count = 0;
+            var running = document.getElementById('running');
+            var frames = [
+                './images/0.png','./images/1.png','./images/2.png','./images/3.png','./images/4.png','./images/5.png','./images/6.png','./images/7.png','./images/8.png','./images/9.png',
+                './images/10.png','./images/11.png','./images/12.png','./images/13.png','./images/14.png'
+            ];
+
+            setInterval(() => {
+               running.src = frames[count % frames.length]; // 0~14 인덱스 무한반복// 15 % 15 = 0
+               count +=1; 
+            }, 20); // 50ms에 한번씩 이미지 체인지
+        };
+    </script>
+</head>
+<body>
+    <img id="running">
+</body>
+</html>
